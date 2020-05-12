@@ -135,7 +135,7 @@ class PhilipsTvAccessory {
     registerVolumeService = () => {
         const {name, poll_status_interval} = this.config;
 
-        this.volumeService = new Service.Lightbulb(name + " Volume", "tvVolume");
+        this.volumeService = new Service.VolumeControlType(name + " Volume", "tvVolume");
         this.volumeService
             .getCharacteristic(Characteristic.On)
             .on('get', (callback) => {
